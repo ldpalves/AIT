@@ -10,9 +10,23 @@ h3 {
 p {
     font-size: 20px;
 }
+nav {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 section {
     padding: 3rem 2rem 5rem 2rem;
-    min-height: calc(100vh - 80px);
+    min-height: calc(100vh - 88px);
+}
+#contato {
+    min-height: auto;
+}
+#contato p {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+#contato a:hover {
+    color: blue;
 }
 
 
