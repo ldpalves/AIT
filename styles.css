@@ -1,0 +1,26 @@
+* {
+    
+}
+h2 {
+    font-size: 60px;
+}
+h3 {
+    color: #02182b;
+}
+p {
+    font-size: 20px;
+}
+section {
+    padding: 3rem 2rem 5rem 2rem;
+    min-height: calc(100vh - 80px);
+}
+
+
+
+
+/* Colors */
+.dark-blue { background-color: #02182b; }
+.red { background-color: #b3001b; }
+.blue { background-color: #0197f6; }
+.light-green { background-color: #f5fbef; color: black}
+.grey { background-color: #7d6d61; }
