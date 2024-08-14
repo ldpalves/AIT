@@ -29,6 +29,9 @@ section {
     color: blue;
 }
 
+.max-h-90vh {
+    max-height: 90vh;
+}
 
 
 

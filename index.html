@@ -9,9 +9,9 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </head>
-<body class="light-green">
+<body id="body" class="light-green">
     <!-- Navbar  -->
-    <nav class="p-6 dark-blue flex sm:justify-between justify-start sm:gap-6 gap-12 items-center sticky top-0">
+    <nav class="z-30 p-6 dark-blue flex sm:justify-between justify-start sm:gap-6 gap-12 items-center sticky top-0">
         <button id="menu-button" class="flex sm:hidden text-blue-500">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
@@ -79,22 +79,22 @@
             <!-- Slides -->
             <div id="desktopCarousel" class="carousel flex transition-transform duration-500 ease-in-out">
                 <div class="carousel-item w-full flex-shrink-0 ">
-                    <img src="images/africa-women-in-tech-team-coworking-3d745ba7ea4bafc339c3a42c9cc0530c.jpg" alt="Slide 1" class="w-full h-full object-cover">
+                    <img src="images/africa-women-in-tech-team-coworking-3d745ba7ea4bafc339c3a42c9cc0530c.jpg" alt="Slide 1" class="w-full h-full max-h-90vh object-cover">
                 </div>
                 <div class="carousel-item w-full flex-shrink-0 ">
-                    <img src="images/GettyImages-1370937461-7dca875405954ca1a7b6254be59c05ff.webp" alt="Slide 2" class="w-full h-full object-cover">
+                    <img src="images/GettyImages-1370937461-7dca875405954ca1a7b6254be59c05ff.webp" alt="Slide 2" class="w-full h-full max-h-90vh object-cover">
                 </div>
                 <div class="carousel-item w-full flex-shrink-0 ">
-                    <img src="images/Imagem-Como-melhorar-a-segurança-do-condomínio.jpg" alt="Slide 3" class="w-full h-full object-cover">
+                    <img src="images/Imagem-Como-melhorar-a-segurança-do-condomínio.jpg" alt="Slide 3" class="w-full h-full max-h-90vh object-cover">
                 </div>
             </div>
         </div>
     
         <!-- Navigation Buttons -->
-        <button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+        <button id="prev" class="absolute top-1/2 left-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
             &#10094;
         </button>
-        <button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+        <button id="next" class="absolute top-1/2 right-2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
             &#10095;
         </button>
     </div>
@@ -192,10 +192,13 @@
                 link.addEventListener('click', function(event) {
                     event.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
-                    const targetElement = document.getElementById(targetId);
+                    const isInicio = targetId === 'inicio'
+                    const targetElement = isInicio ? document.getElementById('body') : document.getElementById(targetId);
+                    console.log(targetElement);
 
-                    if (targetElement) {
+                    if (targetElement || isInicio ) {
                         const elementPosition = targetElement.getBoundingClientRect().top;
+                        console.log(elementPosition);
                         const offsetPosition = elementPosition - offset;
 
                         window.scrollBy({
@@ -255,46 +258,5 @@
             updateCarousel();
         }, 4000);
     </script>
-    
-    <!-- Mobile Carousel script -->
-    <!-- <script>
-        const carousel = document.querySelector('.carousel');
-        const items = document.querySelectorAll('.carousel-item');
-        const totalItems = items.length / 2;
-        let currentIndex = 0;
-    
-        document.getElementById('next').addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % totalItems;
-            updateCarousel();
-        });
-    
-        document.getElementById('prev').addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
-            updateCarousel();
-        });
-    
-        function updateCarousel() {
-            const offset = -currentIndex * 100;
-            carousel.style.transform = `translateX(${offset}%)`;
-        }
-        // Automatic slide change
-        setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalItems;
-            updateCarousel();
-        }, 4000);
-    </script> -->
-    <!-- <script>
-        var swiper = new Swiper('.swiper-container', {
-            loop: true,
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-        });
-    </script> -->
-</body>
+    </body>
 </html>
