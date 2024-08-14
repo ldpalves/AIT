@@ -11,14 +11,14 @@
 </head>
 <body class="light-green">
     <!-- Navbar  -->
-    <nav class="p-6 dark-blue flex sm:justify-between justify-start gap-6 items-center sticky top-0">
+    <nav class="p-6 dark-blue flex sm:justify-between justify-start sm:gap-6 gap-12 items-center sticky top-0">
         <button id="menu-button" class="flex sm:hidden text-blue-500">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
             </svg>
         </button>
         <div class="flex items-center">
-            <a href="#inicio" class="text-white text-4xl">AIT Group</a>
+            <a href="#inicio" class="text-white text-4xl">AIT</a>
         </div>
         <div class="hidden sm:flex gap-4">
             <a href="#inicio" class="text-white text-xl mx-2 hover:text-gray-400">Inicio</a>
@@ -28,7 +28,10 @@
         </div>
     </nav>
     <!-- Sidebar mobile -->
-    <div id="sidebar" class="fixed md:hidden inset-y-0 left-0 w-64 bg-blue-500 text-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0">
+    <div 
+        id="sidebar" 
+        class="fixed z-50 bg- md:hidden inset-y-0 left-0 w-64 bg-blue-800 text-white transform -translate-x-full transition-transform duration-300 ease-in-out lg:relative lg:translate-x-0"
+    >
         <div class="p-4 flex flex-col gap-8">
             <button id="close-menu-button" class="flex sm:hidden ml-auto justify-end text-blue-500">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="white">
@@ -43,38 +46,63 @@
 
         </div>
     </div>
-
-    <!-- Inicio Section -->
-    <section id="inicio" class="flex justify-center blue p-0 text-white max-h-screen max-w-screen object-cover">
-        <div class="w-screen swiper-container w-screen max-h-screen max-w-screen">
-            <div class="w-screen swiper-wrapper w-screen max-h-screen max-w-screen">
-                <div class="  max-w-screen swiper-slide max-h-screen max-w-screen">
-                    <img src="images/africa-women-in-tech-team-coworking-3d745ba7ea4bafc339c3a42c9cc0530c.jpg" alt="Slide max-h-screen max-w-screen 1" class="max-h-screen max-w-screen object-cover">
+    
+    <!-- Mobile Carousel Section -->
+    <div class="sm:hidden relative w-full mx-auto">
+        <!-- Carousel Wrapper -->
+        <div class="py-10 w-screen h-96 z-20 absolute top-0 text-white pl-10">
+            <h2> AIT Group</h2>
+            <h3 class="text-xl text-gray-200"> Uma mensagem impactante  de impacto </h3>
+        </div>
+        <div class="opacity-40 absolute bg-gradient-to-br from-blue-500 to-red-900 py-10 w-screen h-96 z-10 top-0 pl-80"></div>
+        <div class="overflow-hidden relative w-screen h-96">
+            <!-- Slides -->
+            <div id="mobileCarousel" class="carousel flex transition-transform duration-500 ease-in-out">
+                <div class="carousel-item w-full flex-shrink-0  w-screen h-96">
+                    <img src="images/africa-women-in-tech-team-coworking-3d745ba7ea4bafc339c3a42c9cc0530c.jpg" alt="Slide 1" class="w-full h-full object-cover">
                 </div>
-                <div class="max-w-screen swiper-slide max-h-screen max-w-screen">
-                    <img src="images/GettyImages-1370937461-7dca875405954ca1a7b6254be59c05ff.webp" alt="Slide max-h-screen max-w-screen 2" class="max-h-screen max-w-screen object-cover">
+                <div class="carousel-item w-full flex-shrink-0  w-screen h-96" >
+                    <img src="images/GettyImages-1370937461-7dca875405954ca1a7b6254be59c05ff.webp" alt="Slide 2" class="w-full h-full object-cover">
                 </div>
-                <div class="max-w-screen swiper-slide max-h-screen max-w-screen">
-                    <img src="images/Imagem-Como-melhorar-a-segurança-do-condomínio.jpg" alt="Slide 3" class="max-h-screen max-w-screen object-cover">
+                <div class="carousel-item w-full flex-shrink-0  w-screen h-96">
+                    <img src="images/Imagem-Como-melhorar-a-segurança-do-condomínio.jpg" alt="Slide 3" class="w-full h-full object-cover">
                 </div>
             </div>
-            <!-- Adicione botões de navegação -->
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-            <!-- Adicione paginação -->
-            <div class="swiper-pagination"></div>
         </div>
-        <!-- <div class="flex-col  xl:w-4/6  md:w-5/6 sm:w-11/12 2xl:w-3/6">
-            <h2 class=" mb-8">Início</h2>
-            <img src="logo.svg" alt="Imagem de boas-vindas" class="w-full h-64 object-cover rounded-lg">
-            <p class="mt-4">Seja bem-vindo ao nosso site. Nós somos a AIT Group, especialistas em TI.</p>
-        </div> -->
-    </section>
+
+    </div>
+
+    <!-- Desktop Carousel Section -->
+    <div class="hidden sm:block w-full  mx-auto">
+        <!-- Carousel Wrapper -->
+        <div class="overflow-hidden relative ">
+            <!-- Slides -->
+            <div id="desktopCarousel" class="carousel flex transition-transform duration-500 ease-in-out">
+                <div class="carousel-item w-full flex-shrink-0 ">
+                    <img src="images/africa-women-in-tech-team-coworking-3d745ba7ea4bafc339c3a42c9cc0530c.jpg" alt="Slide 1" class="w-full h-full object-cover">
+                </div>
+                <div class="carousel-item w-full flex-shrink-0 ">
+                    <img src="images/GettyImages-1370937461-7dca875405954ca1a7b6254be59c05ff.webp" alt="Slide 2" class="w-full h-full object-cover">
+                </div>
+                <div class="carousel-item w-full flex-shrink-0 ">
+                    <img src="images/Imagem-Como-melhorar-a-segurança-do-condomínio.jpg" alt="Slide 3" class="w-full h-full object-cover">
+                </div>
+            </div>
+        </div>
+    
+        <!-- Navigation Buttons -->
+        <button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+            &#10094;
+        </button>
+        <button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full">
+            &#10095;
+        </button>
+    </div>
 
     <!-- Sobre Section -->
     <section id="sobre" class="flex justify-center dark-blue text-white">
         <div class="flex flex-col gap-6 xl:w-4/6  md:w-5/6 sm:w-11/12 2xl:w-3/6">
-            <h2 class=" mb-8">Sobre nos</h2>
+            <h2 class=" mb-7">Sobre nos</h2>
             <p>A AIT Group é uma empresa líder em soluções de TI. Com anos de experiência no setor, oferecemos uma variedade de serviços para atender às suas necessidades tecnológicas.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
@@ -198,8 +226,64 @@
 
     </script>
 
-    <!-- Carousel script -->
+    <!-- Mobile Carousel script -->
     <script>
+        const mobileCarousel = document.getElementById('mobileCarousel'); 
+        const desktoCarousel = document.getElementById('desktopCarousel'); 
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length / 2;
+        let currentIndex = 0;
+    
+        document.getElementById('next').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        });
+    
+        document.getElementById('prev').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        });
+    
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            mobileCarousel.style.transform = `translateX(${offset}%)`;
+            desktoCarousel.style.transform = `translateX(${offset}%)`;
+        }
+        // Automatic slide change
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }, 4000);
+    </script>
+    
+    <!-- Mobile Carousel script -->
+    <!-- <script>
+        const carousel = document.querySelector('.carousel');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length / 2;
+        let currentIndex = 0;
+    
+        document.getElementById('next').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        });
+    
+        document.getElementById('prev').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        });
+    
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            carousel.style.transform = `translateX(${offset}%)`;
+        }
+        // Automatic slide change
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }, 4000);
+    </script> -->
+    <!-- <script>
         var swiper = new Swiper('.swiper-container', {
             loop: true,
             pagination: {
@@ -211,6 +295,6 @@
                 prevEl: '.swiper-button-prev',
             },
         });
-    </script>
+    </script> -->
 </body>
 </html>
