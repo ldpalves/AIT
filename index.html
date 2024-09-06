@@ -42,10 +42,10 @@
                     <path d="M6 6L18 18" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
             </button>
-            <a href="#inicio" class="text-white text-2xl mx-2 hover:text-gray-400">Inicio</a>
-            <a href="#sobre" class="text-white text-2xl mx-2 hover:text-gray-400">Sobre</a>
-            <a href="#servicos" class="text-white text-2xl mx-2 hover:text-gray-400">Serviços</a>
-            <a href="#contato" class="text-white text-2xl mx-2 hover:text-gray-400">Contato</a>
+            <a href="#inicio" class="sidebar-menu-item text-white  text-2xl mx-2 hover:text-gray-400">Inicio</a>
+            <a href="#sobre" class="sidebar-menu-item text-white  text-2xl mx-2 hover:text-gray-400">Sobre</a>
+            <a href="#servicos" class="sidebar-menu-item text-white  text-2xl mx-2 hover:text-gray-400">Serviços</a>
+            <a href="#contato" class="sidebar-menu-item text-white  text-2xl mx-2 hover:text-gray-400">Contato</a>
 
         </div>
     </div>
@@ -220,6 +220,7 @@
         const sidebar = document.getElementById('sidebar');
         const menuButton = document.getElementById('menu-button');
         const closeMenuButton = document.getElementById('close-menu-button');
+        const menuItems = document.querySelectorAll('.sidebar-menu-item');
 
         closeMenuButton.addEventListener('click', () => {
             sidebar.classList.toggle('-translate-x-full');
@@ -227,6 +228,11 @@
 
         menuButton.addEventListener('click', () => {
             sidebar.classList.toggle('-translate-x-full');
+        });
+        menuItems.forEach(item => {
+            item.addEventListener('click', () => {
+                sidebar.classList.toggle('-translate-x-full');
+            });
         });
 
 
